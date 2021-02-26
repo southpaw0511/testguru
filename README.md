@@ -1,3 +1,3 @@
 # README
 
-Entities: Users, Tests, Questions, Answers, Results
+Entities: Users, Tests, Questions, Answers, Results, Categories
