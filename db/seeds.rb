@@ -32,9 +32,9 @@ tests = Test.create!([
 ])
 
 results = Result.create!([
-  { status: true, user_id: users[0], test_id: tests[0] },
-  { status: true, user_id: users[1], test_id: tests[1] },
-  { status: true, user_id: users[2], test_id: tests[2] }
+  { status: true, user: users[0], test_id: tests[0] },
+  { status: true, user: users[1], test_id: tests[1] },
+  { status: true, user: users[2], test_id: tests[2] }
 ])
 
 questions = Question.create!([
