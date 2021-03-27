@@ -14,9 +14,9 @@ Question.destroy_all
 Answer.destroy_all
 
 users = User.create!([
-  { username: 'ali', password: '1234'},
-  { username: 'Kristen', password: 'kris'},
-  { username: 'cat', password: 'gella'}
+  { email: 'ali@gmail.com', password: '1234'},
+  { email: 'kristen@gmail.com', password: 'kris'},
+  { email: 'cat@gmail.com', password: 'gella'}
 ])
 
 categories = Category.create!([
@@ -28,7 +28,7 @@ categories = Category.create!([
 tests = Test.create!([
     { level: 2, title: 'Ruby', category: categories[0], author: users[0] },
     { level: 3, title: 'Javascript', category: categories[1]. author: users[1] },
-    { level: 1, title: 'Python', category: categories[2], author: users[0] }
+    { level: 7, title: 'Python', category: categories[2], author: users[0] }
 ])
 
 results = Result.create!([
@@ -38,15 +38,18 @@ results = Result.create!([
 ])
 
 questions = Question.create!([
-  { body: 'Ruby: Question 1', test_id: tests[0] },
-  { body: 'Javascript: Question 2', test_id: tests[1] },
-  { body: 'Python: Question 3', test_id: tests[2] }
+  { body: 'Ruby: Question 1', test: tests[0] },
+  { body: 'Javascript: Question 2', test: tests[1] },
+  { body: 'Python: Question 3', test: tests[2] }
 ])
 
 answers = Answer.create!([
-  { body: 'Ruby: Answer 1', question_id: questions[0] },
-  { body: 'Javascript: Answer 2', question_id: questions[1] },
-  { body: 'Python: Answer 3', question_id: questions[2] }
+  { body: 'Ruby: Answer 1', correct: false, question: questions[0] },
+  { body: 'Ruby: Answer 1', correct: false, question: questions[0] },
+  { body: 'Ruby: Answer 1', correct: false, question: questions[0] },
+  { body: 'Ruby: Answer 1', question: questions[0] },
+  { body: 'Javascript: Answer 2', question: questions[1] },
+  { body: 'Python: Answer 3', question: questions[2] }
 ])
 
 testsuser = TestsUser.create!([

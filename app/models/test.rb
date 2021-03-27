@@ -6,7 +6,20 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  def self.sort_desc_test_name_by_category(title)
-    joins(:category).where(categories: { title: title }).order(title: :desc).pluck(:title)
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness: { scope: :level,
+    message: 'only one test of this kind per level' }
+
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :by_category, -> (title) {
+    joins(:category)
+    .where(categories: {title: title})
+    .order(title: :desc) }
+
+  def self.select_title(title)
+    by_category(title).pluck(:title)
   end
 end
