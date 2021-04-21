@@ -49,6 +49,7 @@ class TestsController < ApplicationController
   end
   
   def test_params
-    params.require(:test).permit(:body, :level, :author_id, :category_id)
+    author = User.first
+    params.require(:test).permit(:body, :level, :category_id)
   end
 end
