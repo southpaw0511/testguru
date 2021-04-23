@@ -26,9 +26,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-    { level: 2, title: 'Ruby', category: categories[0], author: users[0] },
-    { level: 3, title: 'Javascript', category: categories[1]. author: users[1] },
-    { level: 7, title: 'Python', category: categories[2], author: users[0] }
+    { level: 2, body: 'Ruby', category: categories[0], author: users[0] },
+    { level: 3, body: 'Javascript', category: categories[1]. author: users[1] },
+    { level: 7, body: 'Python', category: categories[2], author: users[0] }
 ])
 
 results = Result.create!([
