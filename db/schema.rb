@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_051915) do
+ActiveRecord::Schema.define(version: 2021_07_17_142641) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2021_04_07_051915) do
 
   create_table "tests", force: :cascade do |t|
     t.text "body", null: false
-    t.string "author", null: false
     t.integer "level", default: 0, null: false
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
