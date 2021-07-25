@@ -1,12 +1,14 @@
-<tr>
-  <td>
-    <%= link_to "add", new_test_question_path(@test) %>
-    |
-  </td>
-  <td>
-    <%= link_to "back", tests_path %>
-  </td>
-</tr>
+<div>
+  <tr>
+    <td>
+      <%= link_to "add", new_test_question_path(@test) %>
+      |
+    </td>
+    <td>
+      <%= link_to "back", tests_path %>
+    </td>
+  </tr>
+</div>
 
 <p>
   <h1><%= question_header(@question, "Test ")%></h1>

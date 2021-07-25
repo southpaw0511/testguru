@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: [:show, :edit, :update, :destroy]
+  before_action :find_test, :author, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -7,9 +7,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
-    @questions = @test.questions
-  end
+  def show; end
 
   def edit; end
 
@@ -48,6 +46,10 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def author
+    author = User.first
   end
   
   def test_params

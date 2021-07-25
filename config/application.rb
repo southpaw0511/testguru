@@ -13,7 +13,7 @@ module TestGuru
 
     config.time_zone = 'Almaty'
 
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
 
     # Configuration for the application, engines, and railties goes here.
     #
