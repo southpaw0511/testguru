@@ -6,9 +6,9 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  validates :title, presence: true
+  validates :body, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :title, uniqueness: { scope: :level,
+  validates :body, uniqueness: { scope: :level,
     message: 'only one test of this kind per level' }
 
   scope :easy, -> { where(level: 0..1) }
@@ -19,7 +19,7 @@ class Test < ApplicationRecord
     .where(categories: {title: title})
     .order(title: :desc) }
 
-  def self.select_title(title)
-    by_category(title).pluck(:title)
+  def self.select_title(body)
+    by_category(body).pluck(:body)
   end
 end
