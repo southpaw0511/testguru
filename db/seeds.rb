@@ -31,11 +31,11 @@ tests = Test.create!([
     { level: 7, body: 'Python', category: categories[2], author: users[0] }
 ])
 
-results = Result.create!([
-  { status: true, user: users[0], test_id: tests[0] },
-  { status: true, user: users[1], test_id: tests[1] },
-  { status: true, user: users[2], test_id: tests[2] }
-])
+# results = Result.create!([
+#   { status: true, user: users[0], test_id: tests[0] },
+#   { status: true, user: users[1], test_id: tests[1] },
+#   { status: true, user: users[2], test_id: tests[2] }
+# ])
 
 questions = Question.create!([
   { body: 'Ruby: Question 1', test: tests[0] },
