@@ -14,10 +14,10 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category, -> (title) {
+  scope :by_category, -> (body) {
     joins(:category)
-    .where(categories: {title: title})
-    .order(title: :desc) }
+    .where(categories: {title: body})
+    .order(body: :desc) }
 
   def self.select_title(body)
     by_category(body).pluck(:body)
